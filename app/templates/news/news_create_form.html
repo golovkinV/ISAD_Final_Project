@@ -1,0 +1,26 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="textarea1" class="form-label">Title</label>
+            <textarea name='title' class="form-control" id="textarea1" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="textarea2" class="form-label">Summary</label>
+            <textarea name='summary' class="form-control" id="textarea2" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="textarea3" class="form-label">Body</label>
+            <textarea name='body' class="form-control" id="textarea3" rows="5"></textarea>
+        </div>
+        <select name="category" hidden>
+            <option value="4" selected></option>
+        </select>
+        <select name="user" hidden>
+            <option value="7" selected></option>
+        </select>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+{% endblock %}

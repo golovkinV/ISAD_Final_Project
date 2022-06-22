@@ -1,0 +1,17 @@
+{% extends 'news/base.html' %}
+{% block content %}
+    <div class="section post-section pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-center">{{ news.user.first_name }} {{ news.user.last_name }}</span>
+                    <span class="date d-block text-center small text-uppercase text-black-50 mb-5">{{ news.created_at|date:"d M, Y" }}</span>
+
+                    <h2 class="heading text-center">{{ news.title }}</h2>
+                    <div class="row mt-5 pt-5 border-top"></div>
+                    <p> {{ news.body }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

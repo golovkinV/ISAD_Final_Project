@@ -13,12 +13,18 @@ class Gender(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=40)
 
+    def __str__(self):
+        return self.name
+
 
 class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
 
 class News(models.Model):
@@ -30,5 +36,5 @@ class News(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.email
+        return self.title
 
