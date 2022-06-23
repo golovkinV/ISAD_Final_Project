@@ -24,7 +24,7 @@ class ProfileView(View):
 
     def get(self, request, id):
         user = get_user_by_id(id)
-        news = get_user_news(id)
+        news = user.news_set.all()
         return render(request, self.template_name, {'user': user, 'all_news': news})
 
 
