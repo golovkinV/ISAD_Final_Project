@@ -40,7 +40,7 @@ class NewsEditUpdateView(UpdateView):
     model = News
     fields = ['title', 'summary', 'body']
     template_name_suffix = "_edit_form"
-    success_url = '/profile/7'
+    success_url = '/profile/10'
     context_object_name = 'news'
 
 
@@ -48,4 +48,4 @@ class NewsCreateView(CreateView):
     model = News
     fields = ['title', 'summary', 'body', 'category', 'user']
     template_name_suffix = "_create_form"
-    success_url = '/profile/7'
+    success_url = '/profile/10'
