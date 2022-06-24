@@ -13,5 +13,5 @@ def get_news_by_id(id: int):
 
 
 def get_news_by_category(id: int):
-    filtered_news = News.objects.filter(category_id=id)
+    filtered_news = News.objects.filter(category_id=id).order_by('-created_at')
     return [NewsListData(news) for news in filtered_news]
