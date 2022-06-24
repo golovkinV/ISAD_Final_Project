@@ -1,4 +1,5 @@
-{% extends 'news/base.html' %}
+{% extends 'base.html' %}
+
 {% block content %}
     {% for news in all_news %}
         <div class="card">
@@ -7,7 +8,7 @@
                 {{ news.user.last_name }}, {{ news.user.email }}
             </h5>
             <div class="card-body">
-                <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">{{ news.category.name }}</span>
+                <span class="badge {{ news.category.get_category_color }} px-2 py-1 shadow-1-strong mb-3">{{ news.category.name }}</span>
                 <h5 class="card-title">{{ news.title }}</h5>
                 <p class="card-text">{{ news.summary }}</p>
                 <a href="/news/{{ news.id }}" class="card-link">More</a>
